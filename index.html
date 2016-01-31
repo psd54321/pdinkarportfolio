@@ -1,0 +1,620 @@
+<html ng-app="myApp" ng-controller="MyController">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Prathamesh Dinkar - Software Developer | Computer Science Graduate Student NYU</title>
+    <meta name="description" content="Prathamesh is a Computer Science Graduate Student at NYU | View Portfolio, resume and more. Get in touch with Prathamesh">
+    <meta content="Prathamesh is a Computer Science Graduate Student at NYU | View Portfolio, resume and more. Get in touch with Prathamesh" property="og:description">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link rel="stylesheet" href="portfoliocss.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery-scrollto.js"></script>
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .header md-toolbar md-icon.md-default-theme {
+            color: white;
+        }
+    </style>
+</head>
+
+<body layout="row" ng-cloak>
+    <!-- Side Nav Start -->
+    <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right" md-is-locked-open="">
+        <md-toolbar class="md-primary">
+            <div class="md-toolbar-tools">
+                <h1 class="md-display-4">Prathamesh Dinkar</h1>
+            </div>
+        </md-toolbar>
+        <md-card>
+            <img class="circular" alt="Prathamesh Dinkar image" src="me.jpg" style="height:152px;">
+            <md-card-content ng-controller="RightCtrl">
+                <nav id="nav1" class="menu">
+                    <ul>
+                        <a style="text-decoration:none; color:black;" href="#homePageDiv">
+                            <div ng-click="close()">Prathamesh</div>
+                        </a>
+                        <a style="text-decoration:none; color:black;" href="#aboutme">
+                            <div style="margin-top:10px;" ng-click="close()">My Bio</div>
+                        </a>
+                        <a style="text-decoration:none; color:black;" href="#education">
+                            <div style="margin-top:10px;" ng-click="close()">Education</div>
+                        </a>
+                        <a style="text-decoration:none; color:black;" href="#work" onclick="$('#work').ScrollTo();">
+                            <div style="margin-top:10px;" ng-click="close()"> Work</div>
+                        </a>
+                        <a style="text-decoration:none; color:black;" href="#projects">
+                            <div style="margin-top:10px;" ng-click="close()"> Projects</div>
+                        </a>
+                        <a style="text-decoration:none; color:black;" href="#skills">
+                            <div style="margin-top:10px;" ng-click="close()">Skills</div>
+                        </a>
+                        <!--a style="text-decoration:none; color:black;" href="#dummy"  ><div style="margin-top:10px;" ng-click="close()">Dummy</div></a-->
+                        <a style="text-decoration:none; color:black;" href="#contact">
+                            <div style="margin-top:10px;" ng-click="close()">Contact</div>
+                        </a>
+                    </ul>
+                </nav>
+            </md-card-content>
+        </md-card>
+    </md-sidenav>
+    <!-- Side Nav End -->
+    
+    <!-- ToolBar Start -->
+    <div layout="column" tabIndex="-1" role="main" flex class="layout-column flex">
+
+        <md-toolbar style="z-index:3;">
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Icon">
+                    <md-tooltip>Icon</md-tooltip>
+                    <md-icon class="md-default-theme"></md-icon>
+                </md-button>
+                <h2>
+          <span><a href="" onclick="$('#homePageDiv').ScrollTo({duration: 400,easing: 'linear'});">Prathamesh</a></span>
+        </h2>
+                <nav id="nav" class="menu" show-gt-sm hide-sm hide-xs style="align:center">
+                    <ul>
+                        <li><a href="" onclick="$('#aboutme').ScrollTo();">My Bio</a>
+                        </li>
+                        <li><a href="" onclick="$('#education').ScrollTo();">Education</a>
+                        </li>
+                        <li> <a href="" onclick="$('#work').ScrollTo();">Work</a>
+                        </li>
+                        <li> <a href="" onclick="$('#projects').ScrollTo();">Projects</a>
+                        </li>
+                        <li><a href="" onclick="$('#skills').ScrollTo();">Skills</a>
+                        </li>
+                        <!--<li><a href="" onclick="$('#dummy').ScrollTo();">Dummy</a></li> -->
+                        <li><a href="" onclick="$('#contact').ScrollTo();">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+
+                <span flex></span>
+
+
+                <md-button style="margin-left:10px;" class="md-icon-button" ng-click="toggleRight()" hide-gt-sm show-sm show-xs>
+
+                    <img src="http://res.cloudinary.com/pdinkar/image/upload/v1452881965/menu_dwo44j.png" style="width:24px;height:24px;" />
+                </md-button>
+
+
+            </div>
+
+        </md-toolbar>
+        <!-- ToolBar End -->
+        
+       
+         <!-- Content Start -->
+        <md-content ng-view md-scroll-y flex layout-padding="" class="layout-padding ng-scope flex">
+            
+             <!-- Home Page Div Start -->
+            <div class="homePageDiv" id="homePageDiv">
+
+                <div class="profile">
+                    <img class="circular" src="http://res.cloudinary.com/pdinkar/image/upload/v1452881965/me_nqqe1i.jpg" alt="Profile image">
+                    <span id="nameclass" style="color:white;font-weight: bold;">Prathamesh Dinkar</span>
+                    <div><span class="subheading">Software Developer</span>
+                    </div>
+                </div>
+                <div class="down-arrow" onclick="$('#aboutme').ScrollTo();">
+                    <md-button class="md-fab md-primary" aria-label="FAB">
+                        <md-icon md-svg-src="http://res.cloudinary.com/pdinkar/image/upload/v1452881964/down_wj2f0j.svg"></md-icon>
+                    </md-button>
+                </div>
+
+            </div>
+            
+             <!-- Home Page Div Start -->
+            
+             <!-- About Me Div Start -->
+
+            <div id="aboutme" class="aboutme" style="border-top:1px solid #dddddd;">
+                <div class="text text-center">
+                    <h1>Prathamesh Dinkar</h1>
+                    <p>Oriented to achieve the best results, I am a student from New York studying Master’s Computer Science at New York University. I have 2+ years of Industry experience in development. I am Oracle Certified Java Programmer.
+                        <br> I have a passion for creating value in the form of reliable, optimized and high quality software.
+                        <br> I believe in following best practices and developing quality and high performance applications.
+                        <!--<ul> <li>	Industry experience of 2 years into Application & Core Components development, Client interaction. </li>      <li>Oracle Certified Java Professional.</li>
+<li>Strengths as front-end developer using Spring, Android, JSF frameworks, basic level of Database development skills.</li>
+<li>	Core functional domain knowledge area is Banking.</li>
+             </ul> -->
+                    </p>
+                    <!-- <p>Controls for all your lights and sensors however you want them.</p> -->
+                </div>
+                <div class="text-center">
+                    <a href="NYU Prathamesh Dinkar Resume.pdf" target="_blank">
+                        <md-button class="md-primary md-raised" style="width:150px;">View Resume
+                        </md-button>
+                    </a>
+
+                </div>
+            </div>
+            
+             <!-- About Me Div End -->
+            
+             <!-- Education Div Start -->
+            
+            <div id="education" class="education row pad center" ng-cloak style="border-top:1px solid #dddddd; ">
+                <div style="text-align:center;color:black;padding-bottom:10px;">
+                    <h3>Education</h3>
+                    <span>See where I gained my initial knowledge to prepare for my professional life.</apan>
+    </div>
+    <div class='md-padding' layout="row" layout-wrap layout-align="center start"  style="color:black;">
+
+
+      <md-card class="educard">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">New York <br>Univeristy</span>
+                    <span class="md-subhead">2015-2017</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-lg card-media"><img id="nyu" class="uniimage" alt="New York University" src="http://res.cloudinary.com/pdinkar/image/upload/v1452907509/nyu_mdyegx.jpg">
+                        </div>
+                    </md-card-title-media>
+                    </md-card-title>
+
+                    <br>
+                    <p>
+                        <h4 style="margin-top:82px;text-align:center;">Masters in Computer Science</h4>
+                    </p>
+
+                    </md-card>
+
+                    <md-card class="educard">
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">University of<br> Pune</span>
+                                <span class="md-subhead">2009-2013</span>
+                            </md-card-title-text>
+                            <md-card-title-media>
+                                <div class="md-media-lg card-media"><img id="pu" class="uniimage" alt="University of Pune" src="http://res.cloudinary.com/pdinkar/image/upload/v1453596794/unipune_bxzvfn.jpg">
+                                </div>
+                            </md-card-title-media>
+                        </md-card-title>
+
+                        <br>
+                        <p>
+                            <h4 style="margin-top:82px;text-align:center;">BE in Computer Engineering</h4>
+                        </p>
+
+                    </md-card>
+
+                    <md-card class="educard">
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Abasaheb Garware<br> College</span>
+                                <span class="md-subhead">2007-2009</span>
+                            </md-card-title-text>
+                            <md-card-title-media>
+                                <div class="md-media-lg card-media"><img id="mes" class="uniimage" alt="Garware College" src="http://res.cloudinary.com/pdinkar/image/upload/v1452920921/garware_j3xnw6.jpg">
+                                </div>
+                            </md-card-title-media>
+                        </md-card-title>
+
+                        <br>
+                        <p>
+                            <h4 style="margin-top:82px;text-align:center;">Higher Secondary Certificate</h4>
+                        </p>
+
+                    </md-card>
+                </div>
+
+
+
+            </div>
+    
+     <!-- Education Div End -->
+    
+     <!-- Work Div Start -->
+            <div id="work" class="work">
+                <div style="text-align:center;color:black;padding-bottom:10px;">
+                    <h3>Work Expereience</h3>
+                    <span>Explore my professional history and see what roles I have played.</apan>
+    </div>
+
+    <div class='md-padding' layout="row" layout-wrap layout-align="center start"  style="color:black;">
+       <div id="accenture" flex="50" flex-sm="100" flex-xs="100" layout="column" class="three-column-article post-tile">
+            <div layout="row">
+                <p flex="80"><span id="workheading">Accenture</span>
+                    </p>
+                    <div><img class="accenture" src="http://res.cloudinary.com/pdinkar/image/upload/v1453082147/accenture_to9yfw.jpg">
+                    </div>
+                </div>
+                <div class="md-subhead">Associate Software Engineering Analyst</div>
+                <div class="md-subhead">Nov 2013-June 2015</div>
+                <div class="workfont">
+                    <p>In my position as Associate Software Engineering Analyst at Accenture, I was involved in a development of end to end multichannel solution for financial services. I have contributed in the development of the front end user interface as well as in the area of Service Integration, writing stored procedures and optimization and performance tuning of existing ones. I have efficiently handled the responsibility of solving technical queries and bugs requested by the client team. By the end of my tenure at Accenture, as I became more familiar with the needs of Accenture’s clientele, I suggested, analyzed the requirement, implemented, tested and demonstrated my module to senior team members and client.</p>
+                </div>
+            </div>
+
+            <div id="heera" flex="50" flex-sm="100" flex-xs="100" layout="column" class="three-column-article post-tile">
+                <div layout="row">
+                    <p flex="80"><span id="workheading">Heera Software Pvt, Ltd.</span>
+                    </p>
+                    <div><img class="heera" src="http://res.cloudinary.com/pdinkar/image/upload/v1453082147/heera_nxfqz4.png">
+                    </div>
+                </div>
+                <div class="md-subhead">Mobile Application Developer</div>
+                <div class="md-subhead">June 2013-Nov 2013</div>
+                <div class="workfont">
+                    <p>Through my work at Heera software Pvt. Ltd. I have designed and developed highly interactive, high performance order collection mobile application named “EasyOrder” using Android technology. I was successfully able to develop offline versions of existing applications using SQLite database in order to reduce the internet dependency in Indian rural market. I was able to optimize size and reduce RAM usage of existing application in order to run it smoothly on low end devices.</p>
+                </div>
+            </div>
+
+    </div>
+    </div>
+    
+     <!-- Work Div End -->
+    
+     <!-- Projects Div Start -->
+    
+    <div id="projects" class="projects">
+        <div style="text-align:center;color:black;padding-bottom:10px;">
+            <h3>Projects</h3>
+            <span>Here are few projects that I have started or been a part of. </apan>
+    </div>
+
+  <div class='md-padding' layout="row" layout-wrap layout-align="center start"  style="color:black;">  
+
+
+                <md-card class="projectcard">
+                    <div style="background-color:#1e9e5e;color:white;font-weight:bold;height:190px;text-align:center;vertical-align:middle;line-height:190px;font-size:27px;"  >HoodConnect</div>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">HoodConnect</span>
+            </md-card-title-text>
+            </md-card-title>
+            <md-card-content class="projectcontent">
+                <p>
+                    Neighbourhood Private Social Network
+                </p>
+
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="center">
+                <md-button class="md-primary md-raised" ng-click="showHoodConnect($event)">Deatails
+                </md-button>
+            </md-card-actions>
+            </md-card>
+            <md-card class="projectcard">
+                <img class="projectimage" src="http://res.cloudinary.com/pdinkar/image/upload/v1453086914/portfolio_akv1di.jpg" class="md-card-image" alt="Portfolio">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">My Portfolio</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content class="projectcontent">
+                    <p>
+                        My Portfolio Website which you are visiting right now.
+                    </p>
+
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="center">
+                    <md-button class="md-primary md-raised" ng-click="showPortfolio($event)">DETAILS
+                    </md-button>
+                </md-card-actions>
+            </md-card>
+            <md-card class="projectcard">
+                <img class="projectimage" src="http://res.cloudinary.com/pdinkar/image/upload/v1453086914/wban_x74dwm.jpg" class="md-card-image" alt="WBAN">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">WBAN</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content class="projectcontent">
+                    <p>
+                        Remote Health Monitoring using Wireless Body Area Network
+                    </p>
+
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="center">
+                    <md-button class="md-primary md-raised" ng-click="showWBAN($event)">DETAILS
+                    </md-button>
+                </md-card-actions>
+            </md-card>
+            <md-card class="projectcard">
+                <div style="background-color:rgb(255,87,34);color:white;font-weight:bold;height:190px;text-align:center;vertical-align:middle;line-height:190px;font-size:27px;">FR</div>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Festival Registration </span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content class="projectcontent">
+                    <p>
+                        A Simple Registration system where patrons can register for a festival event.
+                    </p>
+
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="center">
+                    <md-button class="md-primary md-raised" ng-click="showFestival($event)">DETAILS
+                    </md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+
+
+
+    </div>
+    
+     <!-- Projects Div End -->
+    
+     <!-- Skills Div Start -->
+    <div id="skills" class="skills">
+        <div style="text-align:center;color:black;padding-bottom:10px;">
+            <h3>Technical Skills</h3>
+            <span>A concise list of some of the most valuable professional skills I possess. .</span>
+        </div>
+        <div class='md-padding' layout="row" layout-wrap layout-align="center start" style="color:black;">
+
+            <div style="font-size:14px;" layout="row"><pre style="margin-left:5px;" class="advanced"></pre><span style="margin-left:5px;">Advanced</span>
+            </div>
+            <div style="font-size:14px;margin-left:5px;" layout="row"><pre style="margin:left:5px;" class="proficient"></pre><span style="margin-left:5px;">Proficient</span>
+            </div>
+            <div style="font-size:14px;margin-left:5px;" layout="row"><pre style="margin-left:5px;" class="intermediate"></pre><span style="margin-left:5px;">Intermediate</span>
+            </div>
+            <div style="font-size:14px;margin-left:5px;" layout="row"><pre style="margin-left:5px;" class="beginner"></pre><span style="margin-left:5px;">Beginner</span>
+            </div>
+
+
+        </div>
+        <div class='md-padding' layout="row" layout-wrap layout-align="center start" style="color:black;">
+
+
+            <div class="skillscontainer" layout="column" style="width:300px;display:flex;flex-direction:column;">
+                <P class="skillsheading" style="height:auto;">Programming Languages
+                    <br>
+                    <br>
+                </P>
+                <ul>
+                    <li>
+                        <div style="background-color:#003366" class="skilltitle" layout-align="center start">Java
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#004C99" class="skilltitle" layout-align="center start">C
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#004C99" class="skilltitle" layout-align="center start">C++
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#0080FF" class="skilltitle" layout-align="center start">Python
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="skillscontainer" layout="column" style="height:600px;width:300px;;display:flex;flex-direction:column;">
+                <P class="skillsheading">Web Technologies & Scripting Languages</P>
+                <ul>
+                    <li>
+                        <div style="background-color:#004C99" class="skilltitle" layout-align="center start">PHP
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#003366" class="skilltitle" layout-align="center start">HTML
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#003366" class="skilltitle" layout-align="center start">JQuery
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#004C99" class="skilltitle" layout-align="center start">XML
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#004C99" class="skilltitle" layout-align="center start">Web Services
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#003366" class="skilltitle" layout-align="center start">JavaScript
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#003366" class="skilltitle" layout-align="center start">CSS
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="skillscontainer" layout="column" style="height:500px;width:300px;display:flex;flex-direction:column;">
+                <P class="skillsheading">Databses & Operating Systems
+                    <br>
+                    <br>
+                </P>
+                <ul>
+                    <li>
+                        <div style="background-color:#003366" class="skilltitle" layout-align="center start">Oracle
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#003366" class="skilltitle" layout-align="center start">MYSQL
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#004c99" class="skilltitle" layout-align="center start">SQLite
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#003366" class="skilltitle" layout-align="center start">Windows
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#004c99" class="skilltitle" layout-align="center start">Linux
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#0080ff" class="skilltitle" layout-align="center start">Unix
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="skillscontainer" layout="column" style="width:300px;display:flex;flex-direction:column;">
+                <P class="skillsheading" style="height:auto;">Frameworks
+                    <br>
+                    <br>
+                </P>
+                <ul>
+                    <li>
+                        <div style="background-color:#003366" class="skilltitle" layout-align="center start">Android
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#004c99" class="skilltitle" layout-align="center start">Spring
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#004c99" class="skilltitle" layout-align="center start">EJB
+                        </div>
+                    </li>
+                    <li>
+                        <div style="background-color:#004c99" class="skilltitle" layout-align="center start">JSF
+                        </div>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    
+     <!-- Skills Div End -->
+
+    <!--<div id="dummy" class="dummy">
+
+</div>-->
+
+     <!-- Contact Div Start -->
+    
+    <div id="contact" class="contact">
+
+        <div class='md-padding' layout="row" layout-wrap layout-align="center start" style="color:black;">
+            <div id="getintouch" flex="50" flex-sm="100" flex-xs="100" layout="column" class="three-column-article post-tile">
+                <p><span id="contactheading">It Would Be Great To Hear From You!</span>
+                </p>
+                <div><span id="contactdesc">Feel That Tingling In Your Fingertips? That's The Magnetic Urge To <b>CONTACT ME!</b></span>
+                </div>
+                <div>
+                    <div style="margin-top:20px;"><span style="font-size: 20px; margin-right:25px;" class="icon "><img src="http://res.cloudinary.com/pdinkar/image/upload/v1453040987/map-marker_tflhzs.png"></span><span id="contactdesc">Brooklyn, New York</span>
+                    </div>
+                    <div><span class="icon " style="font-size: 20px; margin-right:25px;"><img src="http://res.cloudinary.com/pdinkar/image/upload/v1453040987/phone_kyawb3.png"></span><span id="contactdesc">+1 (347) 6385927</span>
+                    </div>
+                    <div><span class="icon" style="font-size: 20px; margin-right:25px;"><img src="http://res.cloudinary.com/pdinkar/image/upload/v1453040987/email_hjeaqy.png"></span><span id="contactdesc">prathamesh.dinkar@nyu.edu</span>
+                    </div>
+
+                </div>
+                <p>
+                    <div class="socail" id="socail">
+                        <a href="https://www.linkedin.com/in/prathameshdinkar">
+                            <md-button style="background-color:#007bb6;" class="md-fab md-primary" aria-label="FAB">
+                                <img src="http://res.cloudinary.com/pdinkar/image/upload/v1453040987/linkedin_n0lqj3.png">
+                            </md-button>
+                        </a>
+                        <a href="https://github.com/psd54321">
+                            <md-button style="background-color:black;" class="md-fab md" aria-label="FAB">
+                                <img src="http://res.cloudinary.com/pdinkar/image/upload/v1453040988/github-circle_oudrbt.png">
+                            </md-button>
+                        </a>
+                        <a href="https://www.facebook.com/prathamesh.dinkar">
+                            <md-button class="md-fab md-primary" aria-label="FAB">
+                                <img src="http://res.cloudinary.com/pdinkar/image/upload/v1453040988/facebook_cotayx.png">
+                            </md-button>
+                        </a>
+                        <a href="https://twitter.com/dinkarps">
+                            <md-button style="background-color:#007bb6;" class="md-fab md-primary" aria-label="FAB">
+                                <img src="http://res.cloudinary.com/pdinkar/image/upload/v1453040987/twitter_oqscun.png">
+                            </md-button>
+                        </a>
+                        <a href="https://google.com/+prathameshdinkar">
+                            <md-button style="background-color:#dd4b39;" class="md-fab md-primary" aria-label="FAB">
+                                <img src="http://res.cloudinary.com/pdinkar/image/upload/v1453040987/google-plus_kzikrf.png">
+                            </md-button>
+                        </a>
+                        <a href="https://www.instagram.com/dinkarps/">
+                            <md-button style="background-color:#517fa4;" class="md-fab md-primary" aria-label="FAB"><img src="http://res.cloudinary.com/pdinkar/image/upload/v1453040988/instagram_ocalyw.png">
+                            </md-button>
+                        </a>
+                        <a href="mailto:prathamesh.dinkar.123@gmail.com">
+                            <md-button style="background-color:#bb0000;" class="md-fab md-primary" aria-label="FAB">
+                                <img src="http://res.cloudinary.com/pdinkar/image/upload/v1453040987/gmail_knixg9.png">
+                            </md-button>
+                        </a>
+
+                        <!-- like button code -->
+
+
+                    </div>
+                </p>
+                
+            </div>
+            <div id="email" flex="50" flex-sm="100" flex-xs="100" layout="column" class="three-column-article post-tile">
+                <div id="sendemail">
+                    <p style="margin-top:-30px;font-size: 30px;"><span id="titletext">Pop in and Say Hello!</span>
+                    </p>
+                    <p></p>
+                    <form ng-submit="submitForm()" ng-controller="FormController" novalidate>
+                        <div ng-class="{'submissionMessage' : submission}" ng-bind="submissionMessage"></div>
+                        <input type="text" class="inputtext" name="name" ng-model="formData.name" placeholder="Your name" ng-class="{'error' : errorName}">
+
+                        <input type="email" class="inputtext" name="email" ng-model="formData.email" placeholder="Your email address" ng-class="{'error' : errorEmail}">
+
+                        <textarea name="message" class="inputtext" ng-class="{'error' : errorTextarea}" placeholder="Your message" ng-model="formData.message" cols="30" rows="10" style="height:210px;"></textarea>
+                        <input type="submit" value="Send!" name="submit" style="background-color: rgb(63,81,181);color:white;">
+
+                    </form>
+                    <P>vCard</P>
+                    <img  src="http://res.cloudinary.com/pdinkar/image/upload/v1453040987/vcard_ubxmlz.png" style="height:160px; width:160px;">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+ <!-- Contact Div End -->
+    </md-content>
+
+ <!-- Content End -->
+    </div>
+</body>
+<script src="porfoliojs.js"></script>
+
+</html>
